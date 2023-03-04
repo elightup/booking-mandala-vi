@@ -1,0 +1,12 @@
+{
+	"scripts": {
+		"css": "sass assets/booking_mandala.scss:assets/booking_mandala.css",
+		"watch": "sass assets/booking_mandala.scss:assets/booking_mandala.css --style=compressed --watch"
+	},
+	"devDependencies": {
+		"dart-sass": "^1.25.0"
+	},
+	"dependencies": {
+		"sass": "^1.49.10"
+	}
+}

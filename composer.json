@@ -1,0 +1,8 @@
+{
+	"name": "elightup/booking-mandala",
+	"description": "",
+	"type": "wordpress-plugin",
+	"autoload": {
+		"psr-4": { "BM\\": ["src/"] }
+	}
+}

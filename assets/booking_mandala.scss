@@ -1,0 +1,854 @@
+.container-booking-mandala {
+	width: 100%;
+	.form-booking {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		column-gap: 30px;
+		width: 100%;
+		background: #fff;
+		box-shadow: 0px 10px 40px 0px rgba(6, 22, 58, 0.1);
+		padding: 25px 40px;
+
+		label {
+			font-weight: 600;
+			color: #a4a4a4;
+			font-size: 14px;
+			text-transform: uppercase;
+			padding-bottom: 20px;
+			display: flex;
+			align-items: center;
+			img {
+				margin-right: 5px;
+			}
+		}
+
+		select,
+		input {
+			border: none !important;
+			font-size: 16px;
+			color: #000;
+			font-weight: 500;
+
+			&:focus {
+				box-shadow: unset;
+			}
+		}
+	}
+
+	.bm_row {
+		display: flex;
+		flex-direction: column;
+		border-bottom: 1px solid #000;
+		overflow: hidden;
+		.select2-container{
+			width: 100% !important;
+		}
+
+		.select2-container--default .select2-selection--single {
+			border: none;
+			overflow: hidden;
+		}
+
+		.select2-container--default .select2-selection--single .select2-selection__rendered {
+			font-size: 16px;
+			color: #000;
+		}
+		.checkin-checkout{
+			padding: 0 5px;
+		}
+	}
+
+	.check-time {
+		display: flex;
+	}
+
+	.check-valid {
+		background: #d2a97d;
+		border: none;
+		outline: 0;
+		color: #fff;
+		font-size: 16px;
+		font-weight: 500;
+		text-transform: uppercase;
+	}
+}
+
+.list-booking {
+	.item-booking {
+		padding: 20px;
+		border: 1px solid #e3e3e3;
+		margin-bottom: 20px;
+		.img-content{
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			column-gap: 30px;
+			align-items: center;
+		}
+		.content-people{
+			grid-area: 2/1/3/5;
+			padding: 15px 0px;
+			display: grid;
+			grid-gap: 0px;
+			.adult-child{
+				display: grid;
+			    grid-template-columns: repeat(3,1fr);
+			    align-items: center;
+			    grid-gap: 30px;
+			    padding: 30px 0px;
+			    border-bottom: 1px solid #ddd;
+			    .select-chose{
+			    	font-weight: 500;
+			    }
+			    .select-adult{
+			    	text-align: center;
+			    }
+			    .select-child{
+			    	text-align: right;
+			    }
+
+			}
+			.adult-child:last-child{
+				border: none;
+			}
+		}
+	}
+
+	.pagination {
+		margin: 45px 0px 60px;
+		text-align: center;
+
+		li {
+			display: inline-block;
+			padding: 5px 10px;
+
+			a {
+				font-size: 16px;
+				color: #000;
+				font-weight: 500;
+			}
+
+			&.active {
+				a {
+					font-weight: 700;
+					display: inline-block;
+					border-bottom: 1px solid #000;
+				}
+			}
+		}
+	}
+}
+
+.content-item {
+	a:hover{
+		text-decoration: none;
+	};
+	.name {
+		font-family: var(--font-playfair);
+		font-size: 24px;
+		color: #000;
+		line-height: 36px;
+		font-weight: 600;
+		margin: 0;
+		text-transform: capitalize;
+		transition: 0.3s ease;
+		&:hover{
+			color: #d2a97d;
+			text-decoration: none;
+
+		}
+	}
+	.bed{
+		font-size: 13px;
+		line-height: 24px;
+		font-weight: 700;
+		color: #d2a97d;
+		padding-left: 3px;
+	}
+
+	.dt-extra {
+		display: flex;
+		align-items: center;
+		font-size: 13px;
+		line-height: 24px;
+		font-weight: 700;
+		color: #d2a97d;
+
+		label {
+			padding-right: 5px;
+			margin: 0;
+			cursor: unset;
+		}
+		.tooltip {
+			position: relative;
+			display: inline-block;
+			padding-left: 5px;
+			cursor: pointer;
+		}
+
+		/* Tooltip text */
+		.tooltip .tooltiptext {
+			visibility: hidden;
+			background-color: black;
+			color: #fff;
+			text-align: center;
+			padding: 10px;
+			border-radius: 6px;
+			width: 200px;
+			bottom: 110%;
+			left: 50%;
+			margin-left: -100px;
+			/* Position the tooltip text - see examples below! */
+			position: absolute;
+			z-index: 1;
+			font-weight: 400;
+		}
+
+		.tooltip .tooltiptext::after {
+			content: " ";
+			position: absolute;
+			top: 100%;
+			/* At the bottom of the tooltip */
+			left: 50%;
+			margin-left: -5px;
+			border-width: 5px;
+			border-style: solid;
+			border-color: black transparent transparent transparent;
+		}
+
+		/* Show the tooltip text when you mouse over the tooltip container */
+		.tooltip:hover .tooltiptext {
+			visibility: visible;
+		}
+	}
+
+	.description {
+		font-size: 14px;
+		line-height: 24px;
+		margin: 10px 0px;
+		-webkit-line-clamp: 5;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+		display: -webkit-box;
+	}
+
+	.feature {
+		display: grid;
+		grid-template-columns: repeat(6, 1fr);
+		grid-gap: 15px 30px;
+
+		.tooltip {
+			position: relative;
+			display: inline-block;
+			cursor: pointer;
+		}
+
+		.tooltip:nth-child(n+7) {
+			display: none;
+		}
+
+		/* Tooltip text */
+		.tooltip .tooltiptext {
+			visibility: hidden;
+			background-color: black;
+			color: #fff;
+			text-align: center;
+			padding: 10px;
+			border-radius: 6px;
+			width: 120px;
+			bottom: 110%;
+			left: 50%;
+			margin-left: -60px;
+			/* Position the tooltip text - see examples below! */
+			position: absolute;
+			z-index: 1;
+			font-weight: 400;
+		}
+
+		.tooltip .tooltiptext::after {
+			content: " ";
+			position: absolute;
+			top: 100%;
+			/* At the bottom of the tooltip */
+			left: 50%;
+			margin-left: -5px;
+			border-width: 5px;
+			border-style: solid;
+			border-color: black transparent transparent transparent;
+		}
+
+		/* Show the tooltip text when you mouse over the tooltip container */
+		.tooltip:hover .tooltiptext {
+			visibility: visible;
+		}
+
+		img {
+			width: 20px;
+			height: 20px;
+			object-fit: cover;
+			object-position: center;
+		}
+
+		.btn-xemthem-ft {
+			font-size: 30px;
+			line-height: 30px;
+			display: block;
+			width: 30px;
+			height: 30px;
+			border: 1px dotted #d7d7d7;
+			color: #d2a97d;
+			font-weight: 400;
+			cursor: pointer;
+			text-align: center;
+		}
+	}
+
+	.btn_book {
+		font-size: 16px;
+		font-weight: 600;
+		line-height: 24px;
+		padding: 15px 40px;
+		background: #d2a97d;
+		border-radius: 100px;
+		text-transform: uppercase;
+		color: #fff;
+	}
+}
+
+.booking-mandala {
+	display: flex;
+
+	.info-booking {
+		width: 30%;
+		margin-top: 148px;
+		.content-book{
+			overflow-y: auto;
+			height: 45vh;
+		}
+
+	}
+
+	.content-info {
+		padding: 15px;
+		position: sticky;
+		background: #f9f9f9;
+		border: 1px solid #e3e3e3;
+		top: 130px;
+		height: 90vh;
+		h3 {
+			font-size: 20px;
+			line-height: 60px;
+			font-weight: 600;
+			text-transform: uppercase;
+			border-bottom: 1px solid #e3e3e3;
+			margin: 0;
+		}
+	}
+
+	.list-booking {
+		width: 70%;
+		padding-right: 20px;
+		margin-top: 100px;
+		position: relative;
+		.content-img{
+			position: relative;
+			overflow: hidden;
+			.cover-img{
+				position: relative;
+			}
+			.cover-img::after {
+				content: '';
+				display: block;
+				padding-top: 70%;
+			}
+
+			img {
+				position: absolute;
+				top: 0%;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				margin: auto;
+				object-fit: cover;
+			}
+			.slick-prev {
+				width: 40px;
+				height: 40px;
+				border-radius: 50%;
+				background: url('./image/left-arrow.png') no-repeat;
+				background-position: center;
+				background-size: cover !important;
+				left: 10px;
+				z-index: 2;
+				opacity: 1;
+
+				&:hover {
+					opacity: 0.5;
+				}
+			}
+
+			.slick-next {
+				width: 40px;
+				height: 40px;
+				border-radius: 50%;
+				background: url('./image/left-arrow1.png') no-repeat;
+				background-size: cover !important;
+				background-position: center;
+				right: 10px;
+				z-index: 2;
+				opacity: 1;
+
+				&:hover {
+					opacity: 0.5;
+				}
+			}
+		}
+	}
+}
+
+.booking {
+	.banner-hero>img {
+		height: 50vh;
+	}
+
+	.container-booking-mandala .form-booking {
+		position: relative;
+		bottom: -120px;
+	}
+	.content-plan{
+		select{
+			cursor: pointer;
+			-webkit-appearance: menulist;
+		}
+		.rate-plan {
+			display: grid;
+			grid-template-columns:  repeat( 4, 1fr);
+			margin-bottom: 30px;
+			align-items: center;
+			.text-rate{
+				font-size: 12px;
+			}
+			.name-rate{
+				font-weight: 600;
+				text-align: left;
+				font-size: 14px;
+			}
+			.name-so{
+				font-weight: 500;
+				color: #d2a97d;
+				svg{
+					width: 12px;
+					height: 12px;
+				}
+			}
+			.note-so{
+				text-align: left;
+				display: block;
+				font-weight: 500;
+			}
+			.tooltip .note-so svg{
+				width: 10px;
+				height: 10px;
+				margin-left: 3px;
+			}
+			.rooms_remaining{
+				text-align: right;
+			}
+
+		}
+		.rate-plan:first-child{
+			margin-top: 15px;
+			padding-top: 15px;
+			border-top: 2px dotted #ddd;
+		}
+		.rate-plan:not(:last-child){
+			border-bottom: 2px solid #ddd;
+		}
+		select{
+			border: 1px solid #000;
+			max-width: 120px;
+		}
+		.price-rate{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			.rate-price, .rate-price-dis{
+				font-weight: bold;
+				color: #d2a97d;
+				font-size: 18px;
+			}
+			.rate-price-spe{
+				color:#000;
+				text-decoration:line-through;
+				font-size:14px;
+				font-weight:500;
+			}
+		}
+		.tooltip {
+			position: relative;
+			display: inline-block;
+			text-align: center;
+			cursor: pointer;
+		}
+		.tooltip-people{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			.tooltiptext{
+				width: 200px !important;
+				text-align: center !important;
+			}
+		}
+
+		/* Tooltip text */
+		.tooltip .tooltiptext {
+			visibility: hidden;
+			background-color: black;
+			color: #fff;
+			text-align: left;
+			padding: 10px;
+			border-radius: 6px;
+			width: 300px;
+			bottom: 110%;
+			left: 50%;
+			margin-left: -100px;
+			/* Position the tooltip text - see examples below! */
+			position: absolute;
+			z-index: 9999999;
+			font-weight: 400;
+			.detail-tt span:first-child{
+				font-weight: 600;
+			};
+		}
+
+		.tooltip .tooltiptext::after {
+			content: " ";
+			position: absolute;
+			top: 100%;
+			/* At the bottom of the tooltip */
+			left: 50%;
+			margin-left: -5px;
+			border-width: 5px;
+			border-style: solid;
+			border-color: black transparent transparent transparent;
+		}
+
+		/* Show the tooltip text when you mouse over the tooltip container */
+		.tooltip:hover .tooltiptext {
+			visibility: visible;
+		}
+
+		svg {
+			width: 30px;
+			height: 30px;
+			object-fit: cover;
+			object-position: center;
+		}
+	}
+	.book_rate{
+		font-size: 13px;
+		font-weight: 600;
+		line-height: 29px;
+		padding: 11px 30px;
+		background: #d2a97d;
+		border-radius: 100px;
+		text-transform: uppercase;
+		color: #fff;
+		svg{
+			width: 13px;
+			height: 13px;
+			margin-left: 13px;
+			position: relative;
+			top: 2px;
+		}
+	}
+	.info-hotel{
+		padding: 25px 0;
+		border-bottom:  1px solid #e3e3e3;
+		h4{
+			margin: 0;
+			font-size: 16px;
+			line-height: 30px;
+			font-weight: 600;
+			color: #000;
+			text-transform: capitalize;
+		}
+		span{
+			display: block;
+			font-size: 14px;
+			line-height: 30px;
+			color: #000;
+			font-weight: 400;
+		}
+
+	}
+	.content-book{
+		.rate{
+			font-size: 14px;
+			font-weight: 400;
+			color: #000;
+			font-weight: 400;
+			padding: 25px 0px;
+			border-bottom: 1px solid #eee;
+			border-top: 1px solid #eee;
+		}
+		.room{
+			display: flex;
+			padding-bottom: 15px;
+			flex-wrap: wrap;
+			label{
+				font-weight: 600;
+				padding-right: 3px;
+			}
+		}
+		.name_rate{
+			text-transform: uppercase;
+			padding-bottom: 15px;
+		}
+		.people{
+			padding-bottom: 15px;
+		}
+		.price{
+			color: #d2a97d;
+			font-size: 14px;
+			line-height: 30px;
+			font-weight: 600;
+		}
+		.extra_adult, .extra_child{
+			font-weight: 500;
+		}
+	}
+	.price-button{
+		padding: 30px 0px;
+		border-top: 1px solid #e3e3e3;
+		.total{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			label{
+				font-size: 14px;
+				line-height: 24px;
+				font-weight: 600;
+				color: #000;
+			}
+			span{
+				font-size: 20px;
+				line-height: 24px;
+				font-weight: 700;
+				color: #d2a97d;
+			}
+		}
+		.checkout{
+			font-weight: 600;
+			font-size: 14px;
+			line-height: 19px;
+			color: #fff;
+			background: #d2a97d;
+			padding: 14px 0px;
+			width: 100%;
+			margin-top: 35px;
+			display: block;
+			text-align: center;
+			border-radius: 100px;
+			text-transform: uppercase;
+			cursor: pointer;
+			&:hover{
+				text-decoration: unset;
+			}
+		}
+	}
+	.note{
+		font-size: 18px;
+		line-height: 22px;
+		font-weight: 500;
+		color: #d2a97d;
+		text-align: center;
+	}
+
+}
+.price-btn{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 25px;
+	margin-bottom: 15px;
+	.price{
+		label{
+			font-size: 14px;
+			line-height: 24px;
+			font-weight: 600;
+			color: #000;
+		}
+		span{
+			font-size: 20px;
+			line-height: 24px;
+			font-weight: 700;
+			color: #d2a97d;
+		}
+	}
+}
+.list-amenities{
+	font-weight: 500;
+	margin-bottom: 8px;
+	color: #000;
+}
+.bk-cl{
+	color: #c2c2c2 !important;
+}
+.bk-cl2{
+	color: #fff !important;
+}
+.slick-lightbox-slick-img{
+	max-width: 100% !important;
+	max-height: 100% !important;
+	object-fit: cover;
+	object-position: center;
+}
+.popup-title-desc{
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: 500;
+	text-align: center;
+	text-transform: capitalize;
+	display: block;
+	width: 100%;
+	margin-bottom: 25px;
+	margin-top: -25px;
+}
+@media (max-width:1200px) {
+	.container-booking-mandala .form-booking{
+		display: grid;
+		grid-template-columns: repeat(3,1fr);
+		gap: 30px;
+		button{
+			grid-column: 1/4;
+		}
+	}
+}
+@media (max-width:991px) {
+	.booking-mandala .content-info{
+		height: unset;
+	}
+	.bk-cl2{
+		color: #000 !important;
+	}
+	.booking .note{
+		font-size: 12px;
+		line-height: 16px;
+	}
+	.booking .content-plan .tooltip-people{
+		align-items: end !important;
+	}
+	.container-booking-mandala .form-booking{
+		gap: 0px;
+		button{
+			grid-column: unset;
+		}
+	}
+	.booking-mandala{
+		display: block;
+		.info-booking{
+			width: 100%;
+		}
+		.list-booking{
+			width: 100%;
+			.item-booking .img-content{
+				display: block;
+			}
+			.content-people{
+				grid-area: 3/1/4/3;
+				.adult-child{
+					.select-chose{
+						grid-area:1/1/2/4;
+					}
+				}
+			}
+			.content-plan{
+				.rate-plan{
+					grid-template-columns: repeat( 2, 1fr);
+				}
+				.price-rate{
+					align-items: start;
+					text-align: left !important;
+				}
+				.tooltip, .price-rate, .rooms_remaining{
+					text-align: right;
+				}
+				.content-people .adult-child .select-adult{
+					text-align: left;
+				}
+				.content-people .adult-child .select-child {
+					grid-area: 2/2/3/4;
+				}
+			}
+		}
+	}
+	.content-item .name{
+		font-size: 20px;
+		line-height: 32px;
+	}
+	.content-item .feature{
+		grid-template-columns: repeat(3, 1fr);
+	}
+	.content-item .description{
+		margin: 15px 0px;
+	}
+	.booking .price-btn{
+		.price span{
+			font-size: 14px;
+		}
+		.book_rate{
+			font-size: 12px;
+			padding: 5px 17px;
+			svg{
+				margin-left: 2px;
+			}
+		}
+		.btn{
+			margin-top: 15px;
+		}
+	}
+	.booking .content-plan .price-rate .rate-price, .booking .content-plan .price-rate .rate-price-dis{
+		font-size: 14px;
+	}
+
+}
+.booking .breadcrumbs__separator{
+	font-size: 15px !important;
+	margin:  0 !important;
+}
+.datepicker_start, .datepicker_end{
+	cursor: pointer;
+}
+.bkfixed #ui-datepicker-div {
+	top: 94px !important;
+}
+.mdfixed #ui-datepicker-div {
+	top: 195px !important;
+}
+@media (max-width:991px) {
+	.bkfixed #ui-datepicker-div {
+		top: 215px !important;
+	}
+	.mdfixed #ui-datepicker-div {
+		top: 220px !important;
+	}
+
+}
+.show-hide-info{
+	display: none;
+}
+.booking .data-bug{
+	font-size: 36px;
+	line-height: 48px;
+	text-align: center;
+	padding: 100px 0px;
+}
+@media (max-width:991px) {
+	.booking .data-bug{
+		font-size: 24px;
+		line-height:  36px;
+		padding: 50px 0px;
+	}
+}
